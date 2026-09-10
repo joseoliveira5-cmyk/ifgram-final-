@@ -15,6 +15,7 @@ public class UsersController {
     public String postUsers() {
         return "chamei o ednpoint como post";
     }
+
     @PatchMapping
     public String pathUsers() {
         return "atualizei o usuario com path";
