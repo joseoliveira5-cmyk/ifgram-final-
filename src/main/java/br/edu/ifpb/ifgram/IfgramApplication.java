@@ -9,5 +9,4 @@ public class IfgramApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(IfgramApplication.class, args);
 	}
-
 }
