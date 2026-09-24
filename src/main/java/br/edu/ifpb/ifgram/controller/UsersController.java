@@ -1,13 +1,20 @@
 package br.edu.ifpb.ifgram.controller;
 
+import br.edu.ifpb.ifgram.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("Luiz")
+@RequestMapping("/api/users")
 public class UsersController {
+
+    private final UserService service;
+
+    public UsersController (UserService service){
+        this.service = service;
+    }
 
     @GetMapping
     public String getUser() {

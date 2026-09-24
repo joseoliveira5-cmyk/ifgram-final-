@@ -19,10 +19,3 @@ public record UserRequest(
     String senha
 
 ) { }
-
-//public record UserResponse(String email, String nome, String senha){
-//
-//    public static UserResponse from(User user){
-//        return new UserResponse(user.getEmail(), user.getNome(), user.getSenha());
-//    }
-//}
