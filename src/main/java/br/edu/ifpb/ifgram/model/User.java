@@ -14,9 +14,12 @@ import jakarta.validation.constraints.Size;
 @Table(name = "usuarios")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(nullable = false, length = 120)
     private String nome;
+
     @Column(nullable = false, unique = true)
     private String email;
 
@@ -24,6 +27,9 @@ public class User {
     }
 
     public User(@Size(min=3) @NotNull String nome, @Email String email) {
+        this.nome = nome;
+        this.id = id;
+        this.email = email;
     }
 
     public Long getId() {
