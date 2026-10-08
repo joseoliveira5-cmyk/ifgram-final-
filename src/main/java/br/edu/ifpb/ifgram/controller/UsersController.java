@@ -1,6 +1,11 @@
 package br.edu.ifpb.ifgram.controller;
 
+import br.edu.ifpb.ifgram.DTO.UserRequest;
+import br.edu.ifpb.ifgram.DTO.UserResponse;
+import br.edu.ifpb.ifgram.service.EmailDuplicadoException;
 import br.edu.ifpb.ifgram.service.UserService;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +19,11 @@ public class UsersController {
 
     public UsersController (UserService service){
         this.service = service;
+    }
+
+    @PostMapping
+    public UserResponse criar(@Valid @RequestBody UserRequest request) throws EmailDuplicadoException {
+        return service.criar(request);
     }
 
     @GetMapping
