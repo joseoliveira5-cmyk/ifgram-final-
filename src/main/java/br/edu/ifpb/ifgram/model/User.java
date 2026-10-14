@@ -1,5 +1,8 @@
 package br.edu.ifpb.ifgram.model;
 
+import br.edu.ifpb.ifgram.DTO.UserRequest;
+import br.edu.ifpb.ifgram.DTO.UserResponse;
+import br.edu.ifpb.ifgram.repositoy.UserRepository;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
@@ -55,4 +58,5 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

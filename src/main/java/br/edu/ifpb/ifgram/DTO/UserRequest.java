@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
+import org.springframework.web.bind.annotation.GetMapping;
 
 public record UserRequest(
 
@@ -18,4 +19,6 @@ public record UserRequest(
     @NotNull
     String senha
 
-) { }
+) {
+
+}
