@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/users")
 public class UsersController {
@@ -31,9 +33,10 @@ public class UsersController {
         return "get user was called";
     }
 
-    @PostMapping
-    public String postUser() {
-        return "Chamei o endpoint como um post";
+    @GetMapping
+    public List<UserResponse> getUsers(){
+        List<UserResponse> listaUsuarios = service.buscarTodosUsuarios();
+        return listaUsuarios;
     }
 
     @PutMapping
