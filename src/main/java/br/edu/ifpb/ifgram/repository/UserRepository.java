@@ -1,6 +1,5 @@
-package br.edu.ifpb.ifgram.repositoy;
+package br.edu.ifpb.ifgram.repository;
 
-import jakarta.validation.constraints.Email;
 import br.edu.ifpb.ifgram.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -18,5 +17,4 @@ public interface UserRepository extends JpaRepository<User, Long>{
 
     @Query("select u from User u where u.email like concat('%', :dominio)")
     List<User> doDominio(String dominio);
-
 }

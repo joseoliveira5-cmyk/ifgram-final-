@@ -2,8 +2,6 @@ package br.edu.ifpb.ifgram.controller;
 
 import br.edu.ifpb.ifgram.DTO.UserRequest;
 import br.edu.ifpb.ifgram.DTO.UserResponse;
-import br.edu.ifpb.ifgram.model.User;
-import br.edu.ifpb.ifgram.repositoy.UserRepository;
 import br.edu.ifpb.ifgram.service.EmailDuplicadoException;
 import br.edu.ifpb.ifgram.service.UserService;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
@@ -14,15 +12,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
-public class UsersController {
+public class UserController {
 
     private final UserService service;
 
-    public UsersController (UserService service){
+    public UserController(UserService service){
         this.service = service;
     }
 
@@ -48,7 +45,7 @@ public class UsersController {
     }
 
     @PutMapping
-    public UserResponse UpdateUser (UserRequest request){
+    public UserResponse UpdateUser (UserRequest request) throws Exception {
         return service.atualizarUsuario(request);
     }
 
